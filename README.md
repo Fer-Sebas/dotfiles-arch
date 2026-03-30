@@ -1,7 +1,5 @@
 # Dotfiles (Arch Linux)
 
-# dotfiles-arch
-
 My personal dotfiles for an Arch Linux setup running Hyprland with an amber terminal aesthetic.
 
 ---
