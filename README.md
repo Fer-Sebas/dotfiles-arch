@@ -2,8 +2,6 @@
 
 My personal dotfiles for an Arch Linux setup running Hyprland with an amber terminal aesthetic.
 
----
-
 ## Dependencies
 
 - `stow` — symlink manager
@@ -13,8 +11,6 @@ My personal dotfiles for an Arch Linux setup running Hyprland with an amber term
 - `hyprpaper` — wallpaper daemon
 - `rofi` — app launcher
 - `pipewire` + `wireplumber` — audio
-
----
 
 ## Structure
 
@@ -35,8 +31,6 @@ dotfiles/
 ├── packages.txt
 └── install.sh
 ```
-
----
 
 ## Install
 
