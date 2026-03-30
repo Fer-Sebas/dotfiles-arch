@@ -1,0 +1,107 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 4,
+  "margin-top": 12,
+  "margin-left": 16,
+  "margin-right": 16,
+  "modules-left": [
+      "custom/media",
+      "pulseaudio"
+  ],
+  "modules-center": [
+      "temperature",
+      "cpu",
+      "memory",
+      "battery",
+      "battery#bat2"
+  ],
+  "modules-right": [
+      "power-profiles-daemon",
+      "clock",
+      "idle_inhibitor"
+  ],
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "AWAKE",
+          "deactivated": "IDLE"
+      }
+  },
+  "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": "{:%H:%M}",
+      "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+      "format": "CPU {usage}%",
+      "tooltip": false
+  },
+  "memory": {
+      "format": "MEM {}%"
+  },
+  "temperature": {
+      "critical-threshold": 80,
+      "format": "TEMP {temperatureC}°C",
+      "format-critical": "HOT {temperatureC}°C"
+  },
+  "battery": {
+      "states": {
+          "warning": 20,
+          "critical": 15
+      },
+      "format": "BAT {capacity}%",
+      "format-charging": "CHR {capacity}%",
+      "format-plugged": "PLG {capacity}%",
+      "format-alt": "{time}",
+      "format-icons": ["", "", "", "", ""]
+  },
+  "battery#bat2": {
+      "bat": "BAT2"
+  },
+  "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+          "default": "PWR",
+          "performance": "PERF",
+          "balanced": "BAL",
+          "power-saver": "SAVE"
+      }
+  },
+  "network": {
+      "format-wifi": "NET {essid} {signalStrength}%",
+      "format-ethernet": "ETH {ipaddr}/{cidr}",
+      "tooltip-format": "{ifname} via {gwaddr}",
+      "format-linked": "{ifname} NO-IP",
+      "format-disconnected": "NET DOWN",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+      "format": "VOL {volume}%",
+      "format-bluetooth": "BT {volume}%",
+      "format-bluetooth-muted": "BT MUTE",
+      "format-muted": "MUTE",
+      "format-source": "MIC {volume}%",
+      "format-source-muted": "MIC OFF",
+      "format-icons": {
+          "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  "custom/media": {
+      "format": "{icon} {}",
+      "return-type": "json",
+      "max-length": 40,
+      "format-icons": {
+          "spotify": "SPT",
+          "default": "MED"
+      },
+      "escape": true,
+      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+  }
+}
