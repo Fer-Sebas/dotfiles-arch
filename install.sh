@@ -12,6 +12,7 @@ PACKAGES=(
   kitty
   nvim
   rofi
+  shell
 )
 
 echo "==> Dotfiles dir: $DOTFILES_DIR"
